@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hoepel Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .resultaat {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hoepel Generator</h1>
+  <button onclick="genereerHoepels()">Kies Random Hoepels</button>
+
+  <div class="resultaat" id="resultaat"></div>
+
+  <script>
+    function genereerHoepels() {
+      const aantalRijen = 5;
+      const hoepelsPerRij = 4;
+      let output = '';
+
+      for (let rij = 1; rij <= aantalRijen; rij++) {
+        let randomHoepel = Math.floor(Math.random() * hoepelsPerRij) + 1;
+        output += `Rij ${rij}: Hoepel ${randomHoepel}<br>`;
+      }
+
+      document.getElementById('resultaat').innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
